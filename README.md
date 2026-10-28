@@ -1,10 +1,10 @@
 # Asynchronous C++ Logger
 
-A lightweight C++20 logging example. Calls to `log()` format a message and enqueue it for a background worker, which writes it to a daily log file. The timestamp is captured with microsecond precision when the message is submitted. Console output can be enabled or disabled.
+A lightweight C++20 logging example. Calls to `log()` and `LOG()` enqueue messages for background workers. `log()` writes to a daily log file and can optionally print to the console; `LOG()` appends C-style formatted messages to `log.txt`, with its console output left commented out. The `log()` timestamp is captured with microsecond precision when the message is submitted.
 
 ## Features
 
-- Asynchronous logging through a thread-safe queue.
+- Asynchronous logging through thread-safe queues for `log()` and `LOG()`.
 - Daily log rotation, with files named `LOGYYYYMMDD.txt` by default.
 - Configurable output directory, file prefix, and date format.
 - Optional console output.
